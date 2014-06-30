@@ -170,6 +170,7 @@ func (c *SQLiteConn) Exec(query string, args []driver.Value) (driver.Result, err
 		s.Close()
 		query = tail
 	}
+	return nil, err
 }
 
 // Implements Queryer
@@ -193,6 +194,7 @@ func (c *SQLiteConn) Query(query string, args []driver.Value) (driver.Rows, erro
 		s.Close()
 		query = tail
 	}
+	return nil, err
 }
 
 func (c *SQLiteConn) exec(cmd string) (driver.Result, error) {
